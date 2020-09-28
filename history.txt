@@ -1,0 +1,15 @@
+    1  echo "# labs-and-assigments-2020-JosephBusante" >> README.md
+    2  git init
+    3  git add README.md
+    4  git commit -m "first commit"
+    5  git config --global user.email "jopbsnt2000@gmail.com"
+    6  git config --global user.name "Joseph Busante"
+    7  git commit -m "first commit"
+    8  git branch -M master
+    9  git remote add origin https://github.com/Enterprise-Performance-Architecture/labs-and-assigments-2020-JosephBusante.git
+   10  git push -u origin master
+   11  ls
+   12  more README.md
+   13  nano README.md
+   14  history
+   15  history > history.txt
