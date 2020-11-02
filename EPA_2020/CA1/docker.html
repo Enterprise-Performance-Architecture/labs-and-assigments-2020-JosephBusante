@@ -27,8 +27,8 @@
 
 <!— Step 3 —> 
 <p style="font-size:160%;"><b>Step 3: Running Dockerfile</b></p>
-<p style="font-size:120%;">Before we run the Dockerfile we must first make sure that we have created our html file. In my case I sed the following command <b>nano docker.html</b></p>
-<p style="font-size:120%;">Once you have created the html file and Dockerfile you can start to build the Dockerfile. To do this we use the <b>docker build.</b>. This command will run all of the commands inside the Dockerfile and once that is completed an <b>image id</b> will be created</p>
+<p style="font-size:120%;">Before we run the Dockerfile we must first make sure that we have created our html file. In my case I had the following command <b>nano docker.html</b>.</p>
+<p style="font-size:120%;">Once you have created the html file and Dockerfile you can start to build the Dockerfile. To do this we use the <b>docker build .</b>. This command will run all of the commands inside the Dockerfile and once that is completed an <b>image id</b> will be created</p>
 <p style="font-size:120%;">Afterwards we use the following command to run the docker image <b>docker run -d -p 8080:8080 "image id"</b>. The -d is detached mode, enables it to run in the background. The -p is used to bind the ports, in my case ports 8080:8080.</p>
 <p style="font-size:120%;">Once the docker image is running we will then go into <b>web preview</b> choose whatever port you have chosen, in my case it is port 8080. Once that is done you click on your html file and your docker image should appear.</p>
 
