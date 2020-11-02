@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EPA CA1 Docker</title>
+<h1 style="text-align:center;"> Docker Tutorial </h1>
+<h2 style="text-align:center;"> Joseph Raul Busante </h2>
+<h2 style="text-align:center;"> X00145523 </h2>
+<h2 style="text-align:center;"> How to use Docker - Instructions for 4th year computing students</h2>
+</head>
+
+<body>
+<p style="font-size:160%;"><b>Dockerfile introduction</b></p>
+<p style="font-size:120%;">A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. Using docker build users can create an automated build that executes several command-line instructions in succession.</p>
+
+<!— Step 1 —>
+<p style="font-size:160%;"><b>Step 1: Pre-Dockerfile creation</b></p>
+<p style="font-size:120%;">Make sure you are in the correct directory that you want to work in. To check your current directory use the command <b>pwd</b>.</p>
+<p style="font-size:120%;">If you are in the correct directory it is time to start creating the Dockerfile and the corresponding files.</p>
+
+<!— Step 2 —> 
+<p style="font-size:160%;"><b>Step 2: Creation of Dockerfile</b></p>
+<p style="font-size:120%;">Once we are in the correct directory it is time to create the Dockerfile. Use the command <b>nano Dockerfile</b> to create the Dockerfile. Once the Dockerfile is created there are a number of commands you can include in the Dockerfile. I used the following docker commands inside my Dockerfile:</p>
+<p style="font-size:120%;"><b>FROM python:3</b> - This command creates a layer from the python3 docker image.</p>
+<p style="font-size:120%;"><b>WORKDIR ./</b> - The WORKDIR command is used to move to the directory where your file is stored.</p>
+<p style="font-size:120%;"><b>COPY dockerfile.html ./</b> - The copy command is used to bring your file to your repository. In my case, the file that I am using is called docker.html. It will pull this file from my working directory to my repositary.</p>
+<p style="font-size:120%;"><b>CMD python -m http.server 8080</b> - This provides a list of commands to run when the docker image is being run. In this case, I am telling this to run the python3 server module on port 8080.</p>
+
+<!— Step 3 —> 
+<p style="font-size:160%;"><b>Step 3: Running Dockerfile</b></p>
+<p style="font-size:120%;">Before we run the Dockerfile we must first make sure that we have created our html file. In my case I sed the following command <b>nano docker.html</b></p>
+<p style="font-size:120%;">Once you have created the html file and Dockerfile you can start to build the Dockerfile. To do this we use the <b>docker build.</b>. This command will run all of the commands inside the Dockerfile and once that is completed an <b>image id</b> will be created</p>
+<p style="font-size:120%;">Afterwards we use the following command to run the docker image <b>docker run -d -p 8080:8080 "image id"</b>. The -d is detached mode, enables it to run in the background. The -p is used to bind the ports, in my case ports 8080:8080.</p>
+<p style="font-size:120%;">Once the docker image is running we will then go into <b>web preview</b> choose whatever port you have chosen, in my case it is port 8080. Once that is done you click on your html file and your docker image should appear.</p>
+
+<p style="font-size:160%;"><b>Congrats, you have learned how to use docker.</b></p>
+</body>
+
+<footer>
+<p style="font-size:160%;"><b>Docker References</b></p>
+<p><a href="https://docs.docker.com/engine/reference/builder/">Desription of what docker is</a></p>
+<p><a href="https://www.educative.io/edpresso/what-is-the-workdir-command-in-docker">Explanation of what the WORKDIR cammand does</a></p>
+<p><a href="https://www.w3schools.com/html/default.asp ">Where I got my html code from</a></p> 
+<p><a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/ ">Dockerfile best practices</a></p>
+</footer>
+</html>
